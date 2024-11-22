@@ -119,7 +119,6 @@ Additional Commands:
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
 ```
-
 <br/>
 
 ## Examples
@@ -188,6 +187,43 @@ descope user create 'andyr@example.com' --name 'Andy Rhoads' -t 'acmecorp' --jso
     }
 }
 ```
+#### Create a test user 
+
+```bash
+# creates a test user
+descope user test create 'johnsmith@example.com' --name 'John Smith' --json
+```
+
+```json
+{
+  "ok": true,
+  "user": {
+    "email": "johnsmith@example.com",
+    "userId": "U2pB55UBcV7vpOxv8wWmxOGzw6jU",
+    "loginIds": [
+      "johnsmith@example.com"
+    ],
+    "verifiedEmail": true,
+    "status": "invited",
+    "test": true,
+    "createdTime": 1732226444
+  }
+}
+```
+#### Generate OTP code for test user 
+
+```bash
+# After test user is created you can generate an Email OTP code that can be reused for testing
+descope user test generate otp email 'johnsmith@example.com' --json
+```
+
+```json
+{
+  "code": "929428",
+  "ok": true
+}
+```
+
 
 #### List all users
 

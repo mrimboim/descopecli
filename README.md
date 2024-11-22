@@ -50,6 +50,14 @@ sudo dnf config-manager --add-repo https://descope.github.io/packages/descope.re
 sudo dnf install descope
 ```
 
+### MacOS
+
+Install `descope` using Homebrew:
+
+```bash
+brew install descope
+```
+
 ### Build from Source
 
 You can build the `descope` command line tool directly with the `go` compiler:
